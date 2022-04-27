@@ -11,7 +11,7 @@ function App() {
     <Router>
       <Switch>
         <Route exact path="/" component={Home} />
-        <Route exact path="/:roomId" component={SwipeableEdgeDrawer} />
+        <Route exact path="/:roomId/:name" component={SwipeableEdgeDrawer} />
       </Switch>
     </Router>
   );
