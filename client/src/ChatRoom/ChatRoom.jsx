@@ -4,7 +4,7 @@ import "./ChatRoom.css";
 import useChat from "../useChat";
 
 const ChatRoom = (props) => {
-  const { roomId } = props;
+  const { roomId, name } = props;
   const { messages, sendMessage } = useChat(roomId);
   const [newMessage, setNewMessage] = React.useState("");
 
@@ -13,7 +13,7 @@ const ChatRoom = (props) => {
   };
 
   const handleSendMessage = () => {
-    sendMessage(newMessage);
+    sendMessage(name.concat(": ", newMessage));
     setNewMessage("");
   };
 
@@ -28,8 +28,6 @@ const ChatRoom = (props) => {
                 message.ownedByCurrentUser ? "my-message" : "received-message"
               }`}
             >
-							{message.senderId}
-							{":\n"}
               {message.body}
             </li>
           ))}

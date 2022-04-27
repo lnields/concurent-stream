@@ -5,7 +5,7 @@ import "./Home.css";
 
 const Home = () => {
   const [roomName, setRoomName] = React.useState("");
-
+	const [name, setName] = React.useState("");
   const handleRoomNameChange = (event) => {
     setRoomName(event.target.value);
   };
@@ -29,7 +29,7 @@ const Home = () => {
         onChange={handleNameChange}
         className="text-input-field"
       />
-      <Link to={`/${roomName}`} className="enter-room-button">
+      <Link to={`/${roomName}/${name}`} className="enter-room-button">
         Join room
       </Link>
     </div>
