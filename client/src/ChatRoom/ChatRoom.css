@@ -1,5 +1,6 @@
 .chat-room-container {
-    position: fixed;
+		height: 100%;
+    position: bottom;
     left: 0;
     right: 0;
     top: 0;
@@ -15,7 +16,7 @@
 
 .messages-container {
     flex: 1;
-    min-height: 100px;
+    min-height: 50px;
     overflow: auto;
     border: 1px solid black;
     border-radius: 7px 7px 0 0;
@@ -27,15 +28,15 @@
 }
 
 .new-message-input-field {
-    height: 200px;
+    height: 50px;
     max-height: 50%;
-    font-size: 20px;
-    padding: 8px 12px;
+    font-size: 10px;
+    padding: 12px 20px;
     resize: none;
 }
 
 .message-item {
-    width: 55%;
+    width: 50%;
     margin: 8px;
     padding: 12px 8px;
     word-break: break-word;
@@ -54,11 +55,11 @@
 }
 
 .send-message-button {
-    font-size: 28px;
-    font-weight: 600;
+    font-size: 10px;
+    font-weight: 500;
     color: white;
     background: #31a24c;
-    padding: 24px 12px;
+    padding: 10px 6px;
     border: none;
 }
 

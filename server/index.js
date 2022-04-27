@@ -7,6 +7,8 @@ const io = require("socket.io")(server, {
 
 const PORT = 4000;
 const NEW_CHAT_MESSAGE_EVENT = "newChatMessage";
+const PLAY_EVENT = "play";
+const PAUSE_EVENT = "pause";
 
 io.on("connection", (socket) => {
   console.log(`Client ${socket.id} connected`);
@@ -25,6 +27,14 @@ io.on("connection", (socket) => {
     console.log(`Client ${socket.id} diconnected`);
     socket.leave(roomId);
   });
+	socket.on(PLAY_EVENT, () => {
+		console.log('client playing video');
+		io.emit(PLAY_EVENT);
+});
+socket.on(PAUSE_EVENT, time => {
+		console.log('client paused video');
+		io.emit(PAUSE_EVENT, time);
+});
 });
 
 server.listen(PORT, () => {

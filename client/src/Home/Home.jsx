@@ -9,6 +9,9 @@ const Home = () => {
   const handleRoomNameChange = (event) => {
     setRoomName(event.target.value);
   };
+	const handleNameChange = (event) => {
+    setName(event.target.value);
+  };
 
   return (
     <div className="home-container">
@@ -17,6 +20,13 @@ const Home = () => {
         placeholder="Room"
         value={roomName}
         onChange={handleRoomNameChange}
+        className="text-input-field"
+      />
+			  <input
+        type="text"
+        placeholder="Name"
+        value={name}
+        onChange={handleNameChange}
         className="text-input-field"
       />
       <Link to={`/${roomName}`} className="enter-room-button">
